@@ -14,6 +14,9 @@ app.use(express.json());
 
 app.use(cors());
 
+app.use(express.static('public'));
+
+
 app.get('/', (request, response) => {
     response.send('Oh hey Pet Box');
 });
@@ -64,6 +67,9 @@ app.delete('/api/v1/pets/:id', (request, response) => {
         res.status(204);
     }})
 });
+
+
+
 
 // app.patch('/api/v1/pets/:id', function(req, res) {
 //     if (req.body.id && req.body.id != req.params.id) return res.status(400).json({error: 'ID in the body is not matching ID in the URL'})
